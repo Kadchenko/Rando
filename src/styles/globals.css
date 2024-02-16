@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --container-padding: 24px;
+}
+
+@layer components {
+  /* layout start */
+  .cp {
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+  }
+  .cp-l {
+    padding-left: var(--container-padding);
+  }
+  .cp-r {
+    padding-right: var(--container-padding);
+  }
+  .container {
+    @apply cp;
+  }
+  /* layout end */
+}

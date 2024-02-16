@@ -1,10 +1,6 @@
-import { Inter } from 'next/font/google';
-
-import './globals.css';
+import '@styles/globals.css';
 
 import type { Metadata } from 'next';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Rando | Get rid from procrastination',
@@ -18,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className="text-body-1 font-Roboto flex h-dvh flex-col justify-stretch text-black">{children}</body>
     </html>
   );
 }
