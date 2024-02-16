@@ -1,3 +1,58 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "extends": [
+    "next",
+    "airbnb-typescript",
+    "prettier"
+  ],
+  "plugins": ["prettier"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    }
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-uses-react": "off",
+    "@typescript-eslint/no-unused-vars": ["error", { "destructuredArrayIgnorePattern": "_" }],
+    "import/order": [
+      "error",
+      {
+        "pathGroups": [
+          {
+            "pattern": "@components/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "@styles/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "@utils/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "@assets/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "@hooks/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "@vercel/**",
+            "group": "external"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["internal"],
+        "newlines-between": "always",
+        "warnOnUnassignedImports": true,
+        "groups": ["builtin", "external", "internal", "index", "parent", "sibling", "type"]
+      }
+    ]
+  }
 }
